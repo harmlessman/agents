@@ -180,7 +180,7 @@ class ChunkedStream(tts.ChunkedStream):
         def _synthesize() -> speechsdk.SpeechSynthesisResult:
             if self._opts.prosody:
                 ssml = f'<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="{self._opts.language or "en-US"}">'
-                voice_ssml = f'<voice name="{self._opts.voice}">'
+                voice_ssml = f'<voice name="{self._opts.voice or "en-US-AvaNeural"}">'
                 prosody_ssml = "<prosody"
                 
                 if self._opts.prosody.rate:
